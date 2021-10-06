@@ -1,0 +1,29 @@
+package es.cfc.models;
+
+public class Pez extends Animal {
+	
+
+	public Pez() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Pez(String familia, String genero, String especie, String variedad) {
+		super(familia, genero, especie, variedad);
+	}
+
+	@Override
+	public void regar(int cantidad, int tiempo) {
+		// TODO Auto-generated method stub
+		System.out.println("Regar con " + cantidad + " ml cada " + tiempo + " horas");
+	}
+	
+	public void doSomething() {
+		System.out.println("Yo realmente soy una planta tropical");
+	}
+
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+	
+}

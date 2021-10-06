@@ -1,0 +1,16 @@
+package es.cfc.persistencia;
+
+import java.util.List;
+
+import es.cfc.models.Producto;
+
+public abstract class ProductosDAO {
+
+	public ProductosDAO() {
+	}
+	
+	public abastract List<Producto> verTodos();
+	
+	
+
+}

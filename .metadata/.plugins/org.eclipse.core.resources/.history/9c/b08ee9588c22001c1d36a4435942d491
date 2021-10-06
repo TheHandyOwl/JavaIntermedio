@@ -1,0 +1,26 @@
+package es.cfc.business;
+
+import es.cfc.models.Estado;
+import es.cfc.models.Tarea;
+
+public class GestionTareas {
+
+	Tarea[] tareas = new Tarea[10];
+	
+	public GestionTareas() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Tarea crearTarea(int id, String description) {
+		return new Tarea(id, description, Estado.NUEVA);
+	}
+	
+	public String mostrarTarea() {
+		
+	}
+		
+	public String procesarTarea() {
+		
+	}
+	
+}

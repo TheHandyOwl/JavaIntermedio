@@ -1,0 +1,29 @@
+package es.cfc.models;
+
+public class Perro extends Animal {
+	
+
+	public Perro() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Perro(String familia, String genero, String especie, String variedad) {
+		super(familia, genero, especie, variedad);
+	}
+
+	@Override
+	public void regar(int cantidad, int tiempo) {
+		// TODO Auto-generated method stub
+		System.out.println("Regar con " + cantidad + " ml cada " + tiempo + " días");
+	}
+	
+	public void doSomething() {
+		System.out.println("Yo realmente soy un cactus");
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+	
+}

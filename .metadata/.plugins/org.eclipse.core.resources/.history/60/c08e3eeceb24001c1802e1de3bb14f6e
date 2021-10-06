@@ -1,0 +1,35 @@
+package es.cfc;
+
+import es.cfc.business.Operaciones;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+		int suma = 0;
+
+		// Transformar el número en String a un número entero
+		for (String string : args) {
+			try {
+				// Aquí colocamos todas las líneas que pueden generar error
+				int numero = Integer.parseInt(string);
+
+				suma += numero;	
+			} catch (Exception e) {
+				System.out.println("Error: " + e.getLocalizedMessage() + " is not int");
+				System.out.println("--- Starting info: ");
+				e.printStackTrace();
+				System.out.println("End info ---");
+			} finally {
+				// Código que se ejecuta siempre, haya o no excepción.
+				System.out.println("Subtotal: " + suma);
+			}
+		}
+		
+		System.out.println("Total: " + suma);
+		
+		// Dividir por 0
+		Operaciones operaciones = new Operaciones();
+		operaciones.dividir(2, 0);
+	}
+
+}

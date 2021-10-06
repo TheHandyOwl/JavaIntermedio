@@ -1,0 +1,82 @@
+package es.cfc.models;
+
+import java.util.Iterator;
+
+import es.cfc.Utils.ProductoException;
+
+public class Producto {
+
+	private int ID;
+	private String Nombre;
+	private Double precio;
+	private String proveedor;
+	private String descripcion;
+	
+	public Producto() {
+	}
+
+	public Producto(int iD, String nombre, Double precio, String proveedor, String descripcion) {
+		super();
+		ID = iD;
+		Nombre = nombre;
+		this.precio = precio;
+		this.proveedor = proveedor;
+		this.descripcion = descripcion;
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
+
+	public String getNombre() {
+		return Nombre;
+	}
+
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
+	public String getProveedor() {
+		return proveedor;
+	}
+
+	public void setProveedor(String proveedor) {
+		this.proveedor = proveedor;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	public int comprobar() {
+		try {
+			System.out.println("Tiene ID: " + ID.toString());
+		} catch (Error e) {
+			throw new ProductoException("No tiene ID asignado");
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "ID=" + ID + ", Nombre=" + Nombre + ", precio=" + precio + ", proveedor=" + proveedor
+				+ ", descripcion=" + descripcion;
+	}
+	
+	
+}

@@ -1,0 +1,17 @@
+package es.cfc.models;
+
+public enum Sexo {
+
+	H("hombre"),
+	M("mujer");
+	
+	private String sexo;
+	
+	private Sexo(String sexo) {
+		this.sexo = sexo;
+	}
+	
+	public String getSexo() {
+		return sexo;
+	}
+}

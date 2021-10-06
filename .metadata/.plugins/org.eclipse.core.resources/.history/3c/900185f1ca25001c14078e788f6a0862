@@ -1,0 +1,9 @@
+package es.cfc.business;
+
+import es.cfc.persistencia.ProductosDAO;
+import es.cfc.persistencia.ProductosDAOImpl;
+
+public class GestionProductos {
+
+	ProductosDAO productosDAO = new ProductosDAOImpl();
+}

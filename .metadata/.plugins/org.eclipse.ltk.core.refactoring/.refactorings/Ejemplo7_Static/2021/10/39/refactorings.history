@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;lastId&apos; in &apos;es.cfc.models.Persona&apos; to &apos;contador&apos;&#x0A;- Original project: &apos;Ejemplo7_Static&apos;&#x0A;- Original element: &apos;es.cfc.models.Persona.lastId&apos;&#x0A;- Renamed element: &apos;es.cfc.models.Persona.contador&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;lastId&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;es.cfc.models{Persona.java[Persona^lastId" name="contador" references="true" setter="false" stamp="1633091247690" textual="false" version="1.0"/>
+</session>

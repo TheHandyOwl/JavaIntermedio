@@ -1,0 +1,23 @@
+package es.cfc;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import es.cfc.business.GestionProductos;
+import es.cfc.models.Producto;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+		
+		GestionProductos Productos = new GestionProductos();
+		
+		Producto producto1 = new Producto("Mesa", 200);
+		Producto producto2 = new Producto("Sofá", 300);
+		
+		gestionProductos.
+		
+		
+	}
+	
+}

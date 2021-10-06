@@ -1,0 +1,16 @@
+package es.cfc.models;
+
+public abstract class Animal {
+	
+	public Animal() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public abstract void regar(int cantidad, int tiempo);
+
+	@Override
+	public String toString() {
+		return "yep";
+	}
+	
+}

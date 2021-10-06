@@ -1,0 +1,18 @@
+package es.cfc.models;
+
+import es.cfc.models.itfz.Sonidos;
+
+public class Pajaro extends Animal implements Sonidos {
+
+	public Pajaro() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+	
+	@Override
+	public void emiteSonido(String sonido) {
+		// TODO Auto-generated method stub
+		System.out.println("pio");
+	}
+	
+}

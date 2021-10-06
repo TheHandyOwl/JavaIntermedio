@@ -1,0 +1,141 @@
+package es.cfc.persistencia;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import es.cfc.models.Producto;
+
+public class ProductosDAOImpl implements ProductosDAO {
+
+	private Connection conexion;
+
+	private void abrirConexion() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver"); // Cargar el driver de MySQL
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/tienda", "root", ""); // Abrir la conexión
+		} catch (ClassNotFoundException e) {
+			System.out.println("Error al cargar el driver");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			System.out.println("Error al abrir la conexion");
+			e.printStackTrace();
+		}
+	}
+
+	private void cerrarConexion() {
+		try {
+			conexion.close();
+		} catch (SQLException e) {
+			System.out.println("Error al cerrar la conexion");
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public List<Producto> verTodos() {
+		List<Producto> lista = new ArrayList<Producto>();
+
+		try {
+			abrirConexion();
+
+			Statement stm = conexion.createStatement();
+			ResultSet rs = stm.executeQuery("SELECT * FROM productos;");
+
+			while (rs.next()) {
+				Producto producto = new Producto(rs.getInt("ID"), rs.getString("DESCRIPCION"), rs.getDouble("PRECIO"));
+				lista.add(producto);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			cerrarConexion();
+		}
+
+		return lista;
+	}
+
+	@Override
+	public Producto buscar(int id) {
+		Producto productoEncontrado = null;
+
+		/*
+		 * for (Producto producto : catalogo) { if (producto.getId() == id) {
+		 * productoEncontrado = producto; break; } }
+		 */
+
+		try {
+			abrirConexion();
+
+			Statement stm = conexion.createStatement();
+			ResultSet rs = stm.executeQuery("SELECT * FROM productos WHERE ID = '" + id + "';");
+
+			while (rs.next()) {
+				Producto producto = new Producto(rs.getInt("ID"), rs.getString("DESCRIPCION"), rs.getDouble("PRECIO"));
+				lista.add(producto);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			cerrarConexion();
+		}
+
+		return productoEncontrado;
+	}
+
+	@Override
+	public boolean insertar(Producto nuevoProducto) {
+		/*
+		 * Iterator<Producto> iterador = catalogo.iterator(); while (iterador.hasNext())
+		 * { Producto producto = iterador.next(); if (nuevoProducto.getId() ==
+		 * producto.getId()) { return false; } }
+		 * 
+		 * catalogo.add(nuevoProducto);
+		 */
+		
+		try {
+			abrirConexion();
+
+			Statement stm = conexion.createStatement();
+			boolean result = stm.execute("INSERT INTO productos VALUES ('" + 
+					nuevoProducto.getId() + "', '" +
+					nuevoProducto.getDescripcion() + "', '" +
+					nuevoProducto.getPrecio() + "');");
+			return result;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			cerrarConexion();
+		}
+	}
+
+	@Override
+	public boolean modificar(int id, double precio) {
+		/*
+		 * Iterator<Producto> iterador = catalogo.iterator(); while (iterador.hasNext())
+		 * { Producto producto = iterador.next(); if (producto.getId() == id) {
+		 * producto.setPrecio(precio); return true; } }
+		 */
+
+		return false;
+	}
+
+	@Override
+	public boolean eliminar(int id) {
+		/*
+		 * for (Producto producto : catalogo) { if (producto.getId() == id) {
+		 * catalogo.remove(producto); return true; } }
+		 */
+
+		return false;
+	}
+
+}

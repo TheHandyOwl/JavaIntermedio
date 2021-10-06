@@ -1,0 +1,9 @@
+package es.cfc.business;
+
+import es.cfc.models.Carta;
+
+public class Baraja {
+
+	Carta[] mano = new Carta[8];
+	
+}

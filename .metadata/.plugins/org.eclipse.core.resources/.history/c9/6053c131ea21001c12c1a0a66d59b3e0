@@ -1,0 +1,25 @@
+package es.cfc.business;
+
+import es.cfc.models.Carta;
+import es.cfc.models.Numero;
+import es.cfc.models.Palo;
+
+public class Baraja {
+
+	Carta cartas[] = new Carta[4];
+	
+	public void addCarta(int posicion, Numero numero, Palo palo) {
+		cartas[posicion] = new Carta(numero, palo);
+	}
+	
+	public String verCarta(int posicion) {
+		String literal = cartas[posicion - 1].toString(); 
+		return literal; 
+	}
+	
+	public Carta[] verCartas() {
+		for(Carta carta: cartas) {
+			return verCarta(carta);
+		}
+	}
+}

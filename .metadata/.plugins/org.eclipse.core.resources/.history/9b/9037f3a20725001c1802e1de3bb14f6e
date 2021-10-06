@@ -1,0 +1,13 @@
+package es.cfc;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+
+		// LIST SÍ permite duplicados y SÍ garantiza el orden de entrada
+		
+		// SET NO permite duplicados y NO garantiza el orden de entrada
+
+	}
+
+}

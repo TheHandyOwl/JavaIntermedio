@@ -1,0 +1,15 @@
+package es.cfc;
+
+import es.cfc.models.Pajaro;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Pajaro pajaro = new Pajaro("Piolín", true);
+		System.out.println("Nombre: " + pajaro.getNombre());
+
+	}
+
+}

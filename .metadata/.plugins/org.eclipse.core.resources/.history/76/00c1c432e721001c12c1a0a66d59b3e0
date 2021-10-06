@@ -1,0 +1,17 @@
+package es.cfc.Models;
+
+public enum Palo {
+
+	OROS, COPAS, ESPADAS, BASTOS;
+	
+	private String palo;
+	
+	private String Palo(String palo) {
+		this.palo = palo;
+	}
+
+	public String getPalo() {
+		return palo;
+	}
+	
+}

@@ -1,0 +1,49 @@
+package es.cfc.models;
+
+public class Producto {
+
+	private int id;
+	private String descripcion;
+	private double precio;
+	
+	// Propiedad de la clase
+	private static int contador = 0;
+	
+	 public Producto() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Producto(String descripcion, double precio) {
+		super();
+		this.id = ++contador;
+		this.descripcion = descripcion;
+		this.precio = precio;
+	}
+
+	public int getId() {
+		return id;
+	}
+	
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+	@Override
+	public String toString() {
+		return "Producto [id=" + id + ", descripcion=" + descripcion + ", precio=" + precio + "]";
+	}
+	 
+	 
+}

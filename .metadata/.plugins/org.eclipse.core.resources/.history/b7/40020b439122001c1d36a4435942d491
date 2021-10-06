@@ -1,0 +1,32 @@
+package es.cfc;
+
+import es.cfc.business.GestionTareas;
+import es.cfc.models.Estado;
+import es.cfc.models.Tarea;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		GestionTareas gt = new GestionTareas();
+		Tarea[] tareas = new Tarea[10];
+		
+		tareas[0] = new Tarea(1, "Comprar patatas", Estado.NUEVA);
+		tareas[1] = new Tarea(1, "Comprar patatas", Estado.EN_PROCESO);
+		tareas[2] = new Tarea(1, "Comprar patatas", Estado.FINALIZADA);
+		
+		gt.crearTarea(tareas[0]);
+		gt.crearTarea(tareas[1]);
+		gt.crearTarea(tareas[2]);
+		
+		gt.procesarTarea(tareas[0]);
+		
+		tareas[0] = gt.procesarTarea(tareas[0]);
+		System.out.println(gt.mostrarTarea(tareas[0]));
+		
+		tareas[0] = gt.procesarTarea(tareas[0]);
+		System.out.println(gt.mostrarTarea(tareas[0]));
+	}
+	
+}

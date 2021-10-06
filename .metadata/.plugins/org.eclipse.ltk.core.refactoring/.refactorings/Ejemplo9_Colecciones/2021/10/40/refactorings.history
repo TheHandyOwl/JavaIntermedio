@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;AppMain.java&apos; to &apos;Ejercicio_Colecciones_01_Algo/src&apos;&#x0A;- Original project: &apos;Ejemplo9_Colecciones&apos;&#x0A;- Destination element: &apos;Ejercicio_Colecciones_01_Algo/src&apos;&#x0A;- Original element: &apos;es.cfc.AppMain.java&apos;" description="Copy compilation unit" destination="=Ejercicio_Colecciones_01_Algo/src" element1="/src&lt;es.cfc{AppMain.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1633345774534" units="1" version="1.0"/>
+</session>

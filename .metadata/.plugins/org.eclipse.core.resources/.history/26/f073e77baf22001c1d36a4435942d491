@@ -1,0 +1,21 @@
+package es.cfc.models;
+
+public class Persona {
+
+	private int id;
+	private int lastId = 0;
+	private String nombre;
+	
+	public Persona(String nombre) {
+		super();
+		this.nombre = nombre;
+		this.id = this.lastId;
+		this.lastId++;
+	}
+
+	@Override
+	public String toString() {
+		return "id=" + id + ", nombre=" + nombre;
+	}
+
+}

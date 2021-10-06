@@ -1,0 +1,20 @@
+package es.cfc;
+
+import es.cfc.models.Estado;
+import es.cfc.models.Tarea;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Tarea[] tareas = new Tarea[10];
+		tareas[0] = new Tarea(1, "Comprar patatas", Estado.NUEVA);
+		tareas[1] = new Tarea(1, "Comprar patatas", Estado.EN_PROCESO);
+		tareas[2] = new Tarea(1, "Comprar patatas", Estado.FINALIZADA);
+	}
+
+
+	
+	
+}

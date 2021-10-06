@@ -1,0 +1,17 @@
+package es.cfc;
+
+import es.cfc.models.Perro;
+import es.cfc.models.Animal;
+import es.cfc.models.Pez;
+
+public class TestAnimales {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("tropical: -----");
+		Pez tropical = new Pez();
+		
+	}
+
+}

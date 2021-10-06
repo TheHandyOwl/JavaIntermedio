@@ -1,0 +1,10 @@
+package es.cfc.persistencia;
+
+public abstract class ProductosDAO {
+
+	public ProductosDAO() {
+	}
+	
+	public List<Producto>
+
+}

@@ -1,0 +1,23 @@
+package es.cfc;
+
+import es.cfc.models.Avion;
+import es.cfc.models.Barco;
+import es.cfc.models.Coche;
+import es.cfc.models.Tren;
+
+public class TestVehiculos {
+
+	public static void main(String[] args) {
+	
+		Avion avion = new Avion(100, "Boing", "747", 5000, "Rayanair");
+		Barco barco = new Barco(200, "Costa Cruceros", "Princesa", 160, "Recreativo");
+		Coche coche = new Coche(5, "Citroen", "Xsara", false, "0000BBB");
+		Tren tren = new Tren(400, "Talgo", "Eco", 10, "Madrid", "Valencia");
+		
+		System.out.println(avion + "\n" + 
+				barco + "\n" + 
+				coche + "\n" + 
+				tren);
+	}
+	
+}

@@ -1,0 +1,8 @@
+package es.cfc.models.itfz;
+
+public interface Sonidos {
+	
+	void asignarSonido(String sonido);
+	void emitirSonido();
+	
+}

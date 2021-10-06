@@ -1,0 +1,33 @@
+package es.cfc.business;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import es.cfc.models.Producto;
+import es.cfc.persistencia.ProductosDAO;
+import es.cfc.persistencia.ProductosDAOImpl;
+
+public class GestionProductos {
+
+	ProductosDAO productosDAO = new ProductosDAOImpl();
+	
+	public Producto buscarProducto(int id) {
+		System.out.println("Buscando id: " + id);
+		return productosDAO.buscar(id);
+	}
+	public Producto buscarProducto(int id) {
+		System.out.println("Buscando id: " + id);
+		return productosDAO.buscar(id);
+	}
+	
+	public boolean guardarProductos(Producto producto) {
+		System.out.println("Guardando producto");
+		return productosDAO.insertar(producto);
+	}
+	
+	public boolean guardarProductos(Producto producto) {
+		System.out.println("Guardando producto");
+		return productosDAO.insertar(producto);
+	}
+
+}

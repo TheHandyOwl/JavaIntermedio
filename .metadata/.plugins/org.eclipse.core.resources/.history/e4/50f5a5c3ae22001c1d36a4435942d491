@@ -1,0 +1,12 @@
+package es.cfc;
+
+import es.cfc.models.Persona;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+		Persona persona1 = new Persona("Juan");
+		Persona persona2 = new Persona("Paco");
+	}
+
+}

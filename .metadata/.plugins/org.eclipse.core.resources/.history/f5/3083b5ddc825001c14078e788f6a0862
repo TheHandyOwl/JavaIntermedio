@@ -1,0 +1,5 @@
+package es.cfc.persistencia;
+
+public class ProductosDAO {
+
+}

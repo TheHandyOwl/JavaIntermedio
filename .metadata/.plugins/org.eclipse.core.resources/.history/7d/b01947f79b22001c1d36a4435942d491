@@ -1,0 +1,8 @@
+package es.cfc.models;
+
+public class Profesional {
+
+	private String email;
+	private String empresa;
+	
+}

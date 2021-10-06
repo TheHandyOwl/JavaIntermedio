@@ -1,0 +1,35 @@
+package es.cfc.models;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Palabra {
+
+
+	private List<String> palabras = new ArrayList<String>();
+	
+	public Palabra() {
+	}
+	
+	
+	public List<String> getPalabras() {
+		return palabras;
+	}
+
+
+	public void setPalabras(List<String> palabras) {
+		this.palabras = palabras;
+	}
+
+
+	public List<String> getDefiniciones() {
+		return palabras;
+	}
+
+
+	@Override
+	public String toString() {
+		return "significados=" + palabras;
+	}
+	
+}

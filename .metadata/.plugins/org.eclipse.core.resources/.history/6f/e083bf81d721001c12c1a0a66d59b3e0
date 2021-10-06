@@ -1,0 +1,26 @@
+package es.cfc.models;
+
+import es.cfc.models.interfaces.Sonidos;
+
+public class Pajaro extends Animal implements Sonidos {
+
+	public Pajaro() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+
+	public Pajaro(int year, String habitat, String nombre, boolean domestico) {
+		super(year, habitat, nombre, domestico);
+	}
+
+	@Override
+	public void emitirSonido() {
+		System.out.println("pio");
+	}
+
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+
+}

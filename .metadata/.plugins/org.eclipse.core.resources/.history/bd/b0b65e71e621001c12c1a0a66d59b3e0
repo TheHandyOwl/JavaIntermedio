@@ -1,0 +1,6 @@
+package es.cfc.Models;
+
+public enum Numero {
+
+	
+}

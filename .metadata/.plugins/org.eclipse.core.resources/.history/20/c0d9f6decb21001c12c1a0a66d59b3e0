@@ -1,0 +1,7 @@
+package es.cfc.models.itfz;
+
+public interface Sonidos {
+	
+	String sonido;
+	
+}

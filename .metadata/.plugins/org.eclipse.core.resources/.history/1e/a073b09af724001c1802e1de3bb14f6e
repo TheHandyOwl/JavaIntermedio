@@ -1,0 +1,5 @@
+package es.cfc.Utils;
+
+public class ProductExceptions {
+
+}

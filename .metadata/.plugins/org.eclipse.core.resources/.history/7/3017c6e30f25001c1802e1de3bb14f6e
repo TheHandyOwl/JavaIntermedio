@@ -1,0 +1,18 @@
+package es.cfc;
+
+public class AppMain {
+
+	/*
+	 * EJERCICIO 5 Cree un programa que implemente un diccionario. El diccionario
+	 * debe contener palabras en castellano y una lista de posibles significados de
+	 * cada palabra. Crear la clase Palabra que permita almacenar la información de
+	 * una palabra, junto con sus definiciones. Utilizar un objeto HashMap para
+	 * almacenar palabras en la clase Diccionario.
+	 */
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

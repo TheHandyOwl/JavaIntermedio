@@ -1,0 +1,19 @@
+package es.cfc;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+		int suma = 0;
+
+		for (String string : args) {
+			// Transformar el número en String a un número entero
+			System.out.println("string: " + string);
+			int numero = Integer.parseInt(string);
+			System.out.println("numero: " + numero);
+			suma += numero;
+		}
+		
+		System.out.println("Total: " + suma);
+	}
+
+}

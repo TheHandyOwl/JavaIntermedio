@@ -1,0 +1,15 @@
+package es.cfc;
+
+import es.cfc.models.Pajaro;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+		Pajaro pajaro = new Pajaro("Piolín", true);
+		System.out.println("Nombre: " + pajaro.getNombre());
+		System.out.println("¿Doméstico? " + pajaro.isDomestico());
+		System.out.println("Description: " + pajaro.toString());
+		pajaro.volar();
+	}
+
+}

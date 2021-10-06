@@ -1,0 +1,20 @@
+package es.cfc;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Genericos {
+
+	public static void main(String[] args) {
+
+		Set<String> nombres = new HashSet<String>();
+		nombres.add("Hola");
+		nombres.add("Adiós");
+		nombres.add(1);
+		nombres.add(true);
+		nombres.add(2);
+		nombres.add("Hola");
+		System.out.println("nombres: " + nombres);
+	}
+
+}

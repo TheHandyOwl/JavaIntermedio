@@ -1,0 +1,23 @@
+package es.cfc.models;
+
+public enum EstadoCivil {
+	SOLTERO("soltero"),
+	CASADO("casado"),
+	VIUDO("viudo"),
+	DIVORCIADO("divorciado"),
+	PAREJA_HECHO("pareja de hecho");
+	
+	private String estado;
+	
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	private EstadoCivil(String estado) {
+		this.estado = estado;
+	}
+	
+	public String getEstado() {
+		return estado.getEstado();
+	}
+}

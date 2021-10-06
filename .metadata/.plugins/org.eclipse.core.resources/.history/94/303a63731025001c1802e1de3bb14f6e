@@ -1,0 +1,38 @@
+package es.cfc;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class AppMain {
+
+	/*
+	 * EJERCICIO 5 Cree un programa que implemente un diccionario. El diccionario
+	 * debe contener palabras en castellano y una lista de posibles significados de
+	 * cada palabra. Crear la clase Palabra que permita almacenar la información de
+	 * una palabra, junto con sus definiciones. Utilizar un objeto HashMap para
+	 * almacenar palabras en la clase Diccionario.
+	 */
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		List<String> hoja = new ArrayList<String>();
+		hoja.add("Hoja de árbol");
+		hoja.add("Hoja de una navaja");
+		hoja.add("Hoja de un libro");
+		
+		List<String> planta = new ArrayList<String>();
+		hoja.add("Planta de un edificio");
+		hoja.add("Planta del pié");
+		hoja.add("Planta como ser vivo");
+		
+		Map<String, List> diccionario = new HashMap<>();
+		diccionario.put("hoja", hoja);
+		
+		System.out.println(diccionario);
+
+	}
+
+}

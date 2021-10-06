@@ -1,0 +1,44 @@
+package es.cfc.models;
+
+import es.cfc.models.itfz.Habitat;
+import es.cfc.models.itfz.Tiempo;
+
+public class SerVivo implements Habitat, Tiempo {
+
+	private boolean vive;
+	
+	public SerVivo() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public SerVivo(boolean vive) {
+		super();
+		this.vive = vive;
+	}
+
+	public boolean isVive() {
+		return vive;
+	}
+
+	public void setVive(boolean vive) {
+		this.vive = vive;
+	}
+
+	@Override
+	public void haceTiempo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void viveHabitat() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String toString() {
+		return "vive=" + vive;
+	}	
+	
+}

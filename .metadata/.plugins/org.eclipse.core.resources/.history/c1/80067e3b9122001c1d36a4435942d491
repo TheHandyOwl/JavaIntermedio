@@ -1,0 +1,34 @@
+package es.cfc.business;
+
+import es.cfc.models.Estado;
+import es.cfc.models.Tarea;
+
+public class GestionTareas {
+	
+	public GestionTareas() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void crearTarea(int id, String descripcion) {
+		Tarea tarea = new Tarea(id, descripcion, Estado.NUEVA);
+		System.out.println("Se ha creado la tarea " + tarea.getDescription() + " y está en estado " + tarea.getEstado());
+	}
+	
+	public String mostrarTarea(Tarea tarea) {
+		return tarea.toString();
+	}
+		
+	public Tarea procesarTarea(Tarea tarea) {
+		Estado estado = tarea.getEstado();
+		
+		if (estado == Estado.FINALIZADA || estado == Estado.EN_PROCESO) {
+			tarea.setEstado(Estado.FINALIZADA);
+		} else if (estado == Estado.NUEVA) {
+			tarea.setEstado(Estado.EN_PROCESO);
+		} else {
+			tarea.setEstado(Estado.EN_PROCESO);
+		}
+		return tarea;
+	}
+	
+}

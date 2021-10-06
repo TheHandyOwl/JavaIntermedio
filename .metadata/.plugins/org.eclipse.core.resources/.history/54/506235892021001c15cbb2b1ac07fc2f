@@ -1,0 +1,36 @@
+package es.cfc;
+
+import es.cfc.models.Cactus;
+import es.cfc.models.Planta;
+import es.cfc.models.PlantaTropical;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		PlantaTropical tropical = new PlantaTropical();
+		tropical.doSomething();
+		tropical.regar(100, 3);
+
+		Cactus cactus = new Cactus();
+		cactus.doSomething();
+		cactus.regar(100, 3);
+		
+		Planta plantaTropical = new PlantaTropical();
+		plantaTropical.regar(100, 3);
+		//plantaTropical.doSomething();
+		PlantaTropical otraPlantaTropical = (PlantaTropical) plantaTropical;
+		otraPlantaTropical.doSomething();
+		otraPlantaTropical.regar(100, 3);
+
+		Planta plantaCactus = new Cactus();
+		plantaCactus.regar(100, 3);
+		//plantaCactus.doSomething();
+		Cactus otroCactus = (Cactus) plantaCactus;
+		otroCactus.doSomething();
+		otroCactus.regar(100, 3);
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package es.cfc;
+
+import es.cfc.models.PlantaTropical;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		PlantaTropical planta = new PlantaTropical();
+		planta.regar(100, 3);
+	}
+
+}

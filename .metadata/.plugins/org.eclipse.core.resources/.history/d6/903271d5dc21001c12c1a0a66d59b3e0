@@ -1,0 +1,5 @@
+package es.cfc.models;
+
+public enum EstadoCivil {
+	SOLETERO, CASADO, VIUDO, DIVORCIADO, PAREJA_HECHO;
+}

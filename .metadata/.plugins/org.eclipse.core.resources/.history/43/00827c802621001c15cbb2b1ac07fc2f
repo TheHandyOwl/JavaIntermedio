@@ -1,0 +1,15 @@
+package es.cfc.models;
+
+public class Perro extends Animal {
+	
+
+	public Perro() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+	
+}

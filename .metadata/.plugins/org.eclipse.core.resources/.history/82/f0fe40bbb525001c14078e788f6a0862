@@ -1,0 +1,10 @@
+package es.cfc.models;
+
+public class Diccionario {
+
+	private Map<String, List<String>> palabras = new HasMap<String, List<String>>();
+	
+	public void addPalabra(Palabra palabra) {
+		palabras.put(palabra.getPalabra(); palabra.getDefiniciones());
+	}
+}

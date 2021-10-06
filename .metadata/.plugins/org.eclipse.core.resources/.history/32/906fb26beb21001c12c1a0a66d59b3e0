@@ -1,0 +1,19 @@
+package es.cfc;
+
+import es.cfc.business.Baraja;
+import es.cfc.models.Numero;
+import es.cfc.models.Palo;
+
+public class AppMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Baraja objBaraja = new Baraja();
+		objBaraja.addCarta(0, Numero.UNO, Palo.OROS);
+		objBaraja.addCarta(0, Numero.DOS, Palo.COPAS);
+		objBaraja.addCarta(0, Numero.TRES, Palo.ESPADAS);
+		objBaraja.addCarta(0, Numero.CUATRO, Palo.BASTOS);
+	}
+
+}

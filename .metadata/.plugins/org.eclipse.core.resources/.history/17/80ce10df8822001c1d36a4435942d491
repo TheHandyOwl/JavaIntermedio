@@ -1,0 +1,9 @@
+package es.cfc.models;
+
+public enum Estado {
+
+	NUEVA,
+	EN_PROCESO,
+	FINALIZADA
+	
+}

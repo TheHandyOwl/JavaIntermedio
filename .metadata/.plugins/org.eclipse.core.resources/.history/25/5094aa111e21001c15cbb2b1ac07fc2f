@@ -1,0 +1,16 @@
+package es.cfc.models;
+
+public class PlantaTropical extends Planta {
+
+	public PlantaTropical() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+	
+	@Override
+	public void regar(int cantidad, int tiempo) {
+		// TODO Auto-generated method stub
+		System.out.println("Doing somthing like ... regar");
+	}
+
+}

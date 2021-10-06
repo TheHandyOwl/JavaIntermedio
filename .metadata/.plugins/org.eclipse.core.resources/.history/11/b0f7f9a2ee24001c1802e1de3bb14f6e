@@ -1,0 +1,49 @@
+package es.cfc;
+
+import es.cfc.business.Operaciones;
+
+public class AppMain {
+
+	// En el main NUNCA PROPAGAR excepciones
+	public static void main(String[] args) {
+
+		
+		
+		// Dividir por 0
+		System.out.println("--- Dividir por 0 ---");
+		Operaciones operaciones = new Operaciones();
+		try {
+			//System.out.println(operaciones.dividir(8, 2));
+			System.out.println(operaciones.dividir(2, 0));
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getLocalizedMessage());
+			e.printStackTrace();
+		}
+		
+		
+		// Transformar el número en String a un número int
+		System.out.println("--- String 2 int ---");
+		int suma = 0;
+		for (String string : args) {
+			try {
+				// Aquí colocamos todas las líneas que pueden generar error
+				int numero = Integer.parseInt(string);
+
+				suma += numero;	
+			} catch (Exception e) {
+				System.out.println("Error: " + e.getLocalizedMessage());
+				System.out.println("--- Starting info: ");
+				e.printStackTrace();
+				System.out.println("End info ---");
+			} finally {
+				// Código que se ejecuta siempre, haya o no excepción.
+				System.out.println("Subtotal: " + suma);
+			}
+		}
+		
+		System.out.println("Total: " + suma);
+
+	
+	}
+
+}

@@ -1,0 +1,35 @@
+package es.cfc;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class Genericos {
+
+	public static void main(String[] args) {
+
+		Set<String> nombres = new HashSet<String>();
+		nombres.add("Pedro");
+		nombres.add("Juan");
+		nombres.add("Antonio");
+		System.out.println("nombres: " + nombres);
+
+		List<String> frutas = new ArrayList<String>();
+		frutas.add("Pera");
+		frutas.add("Uvas");
+		frutas.add("Platano");
+		frutas.add("Manzana");
+		System.out.println("frutas: " + frutas);
+
+		Map<String> mapa = new HashMap<String>();
+		mapa.put("Ingles", 5.45);
+		mapa.put("Matematicas", 8.3);
+		mapa.put("Lengua", 5.75);
+		mapa.put("Biologia", 3.8);
+		System.out.println("frutas: " + frutas);
+	}
+
+}

@@ -1,0 +1,11 @@
+package es.cfc;
+
+import es.cfc.models.Animal;
+
+public class TestAnimal {
+
+	public static void main(String[] args) {
+		Animal animal = new Animal("Carpintero")
+	}
+	
+}

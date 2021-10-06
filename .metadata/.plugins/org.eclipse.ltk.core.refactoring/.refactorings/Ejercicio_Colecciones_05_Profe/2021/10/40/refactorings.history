@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;significados&apos; in &apos;es.cfc.models.Palabra&apos; to &apos;palabras&apos;&#x0A;- Original project: &apos;Ejercicio_Colecciones_05_Profe&apos;&#x0A;- Original element: &apos;es.cfc.models.Palabra.significados&apos;&#x0A;- Renamed element: &apos;es.cfc.models.Palabra.palabras&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;significados&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;es.cfc.models{Palabra.java[Palabra^significados" name="palabras" references="true" setter="false" stamp="1633422396736" textual="false" version="1.0"/>
+</session>

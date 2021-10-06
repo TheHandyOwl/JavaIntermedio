@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;es.cfc.AppMain&apos; to &apos;Baraja&apos;&#x0A;- Original project: &apos;Ejercicio_Enumerados_01_Baraja&apos;&#x0A;- Original element: &apos;es.cfc.AppMain&apos;&#x0A;- Renamed element: &apos;es.cfc.Baraja&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AppMain&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;es.cfc{AppMain.java[AppMain" matchStrategy="1" name="Baraja" qualified="false" references="true" similarDeclarations="false" stamp="1633073565979" textual="false" version="1.0"/>
+</session>
