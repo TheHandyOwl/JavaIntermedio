@@ -80,7 +80,6 @@ public class ContactosDAOImpl implements ContactosDAO {
 				if (rs.getString("APODO").equals(apodo)) {
 					Contacto contacto = new Amigo(rs.getInt("ID"), rs.getString("NOMBRE"), rs.getLong("TELEFONO"),
 							Sexo.valueOf(rs.getString("SEXO")), rs.getString("APODO"), rs.getString("CUMPLE"));
-					System.out.println("Contacto de apodos: " + (Amigo) contacto);
 					contactos.add(contacto);
 				}
 			}
@@ -108,7 +107,6 @@ public class ContactosDAOImpl implements ContactosDAO {
 				if (rs.getString("EMPRESA").equals(empresa)) {
 					Contacto contacto = new Profesional(rs.getInt("ID"), rs.getString("NOMBRE"), rs.getLong("TELEFONO"),
 							Sexo.valueOf(rs.getString("SEXO")), rs.getString("EMAIL"), rs.getString("EMPRESA"));
-					System.out.println("Contacto de empresa: " + (Profesional) contacto);
 					contactos.add(contacto);
 				}
 			}
@@ -135,7 +133,6 @@ public class ContactosDAOImpl implements ContactosDAO {
 			while (rs.next()) {
 				Contacto contacto = new Contacto(rs.getInt("ID"), rs.getString("NOMBRE"), (long) rs.getLong("TELEFONO"),
 						Sexo.valueOf(rs.getString("SEXO")));
-				System.out.println("Contacto normal: " + (Contacto) contacto);
 				contactos.add(contacto);
 			}
 		} catch (SQLException e) {
@@ -145,6 +142,58 @@ public class ContactosDAOImpl implements ContactosDAO {
 		}
 
 		return contactos;
+	}
+
+	@Override
+	public boolean insertar(Contacto contacto) {
+		boolean insertado = false;
+		String query = "";
+		PreparedStatement pst;
+
+		try {
+			abrirConexion();
+
+			if (contacto instanceof Profesional) {
+				Profesional profesional = (Profesional) contacto;
+				query = "INSERT INTO CONTACTOS (ID, NOMBRE, TELEFONO, SEXO, EMAIL, EMPRESA) VALUES (?, ?, ?, ?, ?, ?);";
+				pst = conexion.prepareStatement(query);
+				pst.setInt(1, profesional.getID());
+				pst.setString(2, profesional.getNombre());
+				pst.setLong(3, profesional.getTelefono());
+				pst.setString(4, profesional.getSexo().name());
+				pst.setString(5, profesional.getEmail());
+				pst.setString(6, profesional.getEmpresa());
+			} else if (contacto instanceof Amigo) {
+				Amigo amigo = (Amigo) contacto;
+				query = "INSERT INTO CONTACTOS (ID, NOMBRE, TELEFONO, SEXO, APODO, CUMPLE) VALUES (?, ?, ?, ?, ?, ?);";
+				pst = conexion.prepareStatement(query);
+				pst.setInt(1, amigo.getID());
+				pst.setString(2, amigo.getNombre());
+				pst.setLong(3, amigo.getTelefono());
+				pst.setString(4, amigo.getSexo().name());
+				pst.setString(5, amigo.getApodo());
+				pst.setString(6, amigo.getCumple());
+			} else {
+				query = "INSERT INTO CONTACTOS (ID, NOMBRE, TELEFONO, SEXO) VALUES (?, ?, ?, ?);";
+				pst = conexion.prepareStatement(query);
+				pst.setInt(1, contacto.getID());
+				pst.setString(2, contacto.getNombre());
+				pst.setLong(3, contacto.getTelefono());
+				pst.setString(4, contacto.getSexo().name());
+			}
+
+			int registros = pst.executeUpdate();
+
+			if (registros > 0) {
+				insertado = true;
+			}
+
+		} catch (SQLException e) {
+			System.out.println("Error al insertar el producto");
+			e.printStackTrace();
+		}
+
+		return insertado;
 	}
 
 	@Override

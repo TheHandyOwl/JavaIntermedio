@@ -8,11 +8,13 @@ public interface ContactosDAO {
 
 	public abstract List<Contacto> verTodos();
 
-	public abstract List<Contacto> buscarApodo(String nombre);
+	public abstract List<Contacto> buscarApodo(String apodo);
 
-	public abstract List<Contacto> buscarEmpresa(String nombre);
+	public abstract List<Contacto> buscarEmpresa(String empresa);
 
 	public abstract List<Contacto> buscarNombre(String nombre);
+
+	public abstract boolean insertar(Contacto contacto);
 
 	public abstract boolean insertarAmigo(Contacto contacto);
 

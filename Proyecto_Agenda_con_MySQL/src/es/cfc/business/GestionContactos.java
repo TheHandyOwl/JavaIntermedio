@@ -26,6 +26,10 @@ public class GestionContactos {
 		return dao.buscarNombre(nombre);
 	}
 
+	public boolean insertar(Contacto contacto) {
+		return dao.insertar(contacto);
+	}
+
 	public boolean insertarAmigo(Contacto contacto) {
 		return dao.insertarAmigo(contacto);
 	}
