@@ -1,5 +1,0 @@
-package es.cfc.Utils;
-
-public class ProductoException {
-
-}

@@ -1,9 +1,0 @@
-package es.cfc.models;
-
-public class Amigo  extends Contacto {
-
-	private String apodo;
-	private String cumple;
-	
-
-}

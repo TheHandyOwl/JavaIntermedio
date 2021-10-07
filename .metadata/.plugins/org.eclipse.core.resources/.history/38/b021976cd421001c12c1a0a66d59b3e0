@@ -1,8 +1,0 @@
-package es.cfc.models.interfaces;
-
-public interface Sonidos {
-	
-	void asignarSonido(String sonido);
-	void emitirSonido();
-	
-}

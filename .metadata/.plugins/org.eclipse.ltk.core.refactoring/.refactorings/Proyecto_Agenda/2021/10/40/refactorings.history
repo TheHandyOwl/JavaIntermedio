@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy 3 elements to &apos;Proyecto_Agenda_con_colecciones/src/es.cfc.models&apos;&#x0A;- Original project: &apos;Proyecto_Agenda&apos;&#x0A;- Destination element: &apos;Proyecto_Agenda_con_colecciones/src/es.cfc.models&apos;&#x0A;- Original elements:&#x0A;     es.cfc.models.Contacto.java&#x0A;     es.cfc.models.Profesional.java&#x0A;     es.cfc.models.Sexo.java" description="Copy compilation units" destination="=Proyecto_Agenda_con_colecciones/src&lt;es.cfc.models" element1="/src&lt;es.cfc.models{Contacto.java" element2="/src&lt;es.cfc.models{Profesional.java" element3="/src&lt;es.cfc.models{Sexo.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1633427042636" units="3" version="1.0"/>
-</session>

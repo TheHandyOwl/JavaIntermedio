@@ -1,8 +1,0 @@
-package es.cfc.models;
-
-public class Profesional extends Contacto {
-
-	private String email;
-	private String empresa;
-	
-}

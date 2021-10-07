@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;jefe2&apos; in &apos;es.cfc.AppMain.main(...)&apos; to &apos;otroJefe&apos;&#x0A;- Original project: &apos;Ejemplo4_Polimorfismo&apos;&#x0A;- Original element: &apos;es.cfc.AppMain.main(String[]).jefe2&apos;&#x0A;- Renamed element: &apos;jefe2&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;jefe2&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;es.cfc{AppMain.java[AppMain~main~\[QString;@jefe2!1226!1253!1231!1235!QJefe;!0!false" name="otroJefe" references="true" stamp="1632912468130" version="1.0"/>
-</session>

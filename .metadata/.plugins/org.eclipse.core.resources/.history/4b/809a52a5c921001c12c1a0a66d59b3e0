@@ -1,8 +1,0 @@
-package es.cfc.models;
-
-import es.cfc.models.Animal;
-import es.cfc.models.Pajaro;
-
-public class Animal {
-
-}
