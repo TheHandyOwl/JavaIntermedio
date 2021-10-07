@@ -8,8 +8,7 @@ public class Profesional extends Contacto {
 	public Profesional() {
 	}
 
-	public Profesional(int iD, String nombre, long telefono, Sexo sexo, String email,
-			String empresa) {
+	public Profesional(int iD, String nombre, long telefono, Sexo sexo, String email, String empresa) {
 		super(iD, nombre, telefono, sexo);
 		this.email = email;
 		this.empresa = empresa;

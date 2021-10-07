@@ -80,8 +80,8 @@ public class Contacto {
 
 	@Override
 	public String toString() {
-		return "ID=" + ID + ", nombre=" + nombre + ", telefono=" + telefono + ", sexo="
-				+ sexo.getTipo() + "(" + sexo + ")" + ", hashCode=" + hashCode();
+		return "ID=" + ID + ", nombre=" + nombre + ", telefono=" + telefono + ", sexo=" + sexo.getTipo() + "(" + sexo
+				+ ")" + ", hashCode=" + hashCode();
 	}
 
 }

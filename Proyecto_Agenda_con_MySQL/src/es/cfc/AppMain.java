@@ -5,7 +5,6 @@ import es.cfc.models.Amigo;
 import es.cfc.models.Contacto;
 import es.cfc.models.Profesional;
 import es.cfc.models.Sexo;
-import es.cfc.models.TipoContacto;
 
 public class AppMain {
 
@@ -28,12 +27,9 @@ public class AppMain {
 		gestionContactos.insertarAmigo(lucas);
 		gestionContactos.insertarAmigo(laura);
 		// Profesional
-		Profesional elena = new Profesional(7, "Elena", 616555555L, Sexo.M,
-				"elena@calderon.es", "Calderon");
-		Profesional carlos = new Profesional(8, "Carlos", 616666666L, Sexo.H, "carlos@hp.es",
-				"HP");
-		Profesional susana = new Profesional(9, "Susana", 616777777L, Sexo.M,
-				"susana@calderon.es", "Calderon");
+		Profesional elena = new Profesional(7, "Elena", 616555555L, Sexo.M, "elena@calderon.es", "Calderon");
+		Profesional carlos = new Profesional(8, "Carlos", 616666666L, Sexo.H, "carlos@hp.es", "HP");
+		Profesional susana = new Profesional(9, "Susana", 616777777L, Sexo.M, "susana@calderon.es", "Calderon");
 		gestionContactos.insertarProfesional(elena);
 		gestionContactos.insertarProfesional(carlos);
 		gestionContactos.insertarProfesional(susana);
@@ -47,7 +43,7 @@ public class AppMain {
 		// Modifica
 		gestionContactos.modificar(1, 626666666L);
 		System.out.println("--- Contactos: " + gestionContactos.verTodos());
-		
+
 		// Buscar Contacto
 		System.out.println("--- Buscar contacto: ---\n" + gestionContactos.buscarNombre("Maria"));
 		// Buscar Contacto
