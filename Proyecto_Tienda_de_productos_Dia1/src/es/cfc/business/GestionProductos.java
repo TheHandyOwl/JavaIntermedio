@@ -8,50 +8,27 @@ import es.cfc.persistencia.ProductosDAOImpl;
 
 public class GestionProductos {
 
-	private ProductosDAO productosDAO = new ProductosDAOImpl();
-	
-	public GestionProductos() {
-		// TODO Auto-generated constructor stub
-	}
-	
+	// DAO (Data Access Object)
+	private ProductosDAO dao = new ProductosDAOImpl();
+
 	public Set<Producto> verTodos() {
-		System.out.println("Buscando todos");
-		return productosDAO.verTodos();
+		return dao.verTodos();
 	}
-	
+
 	public Producto buscarProducto(int id) {
-		System.out.println("Buscando id: " + id);
-		return productosDAO.buscar(id);
+		return dao.buscar(id);
 	}
-	
+
 	public boolean insertarProducto(Producto producto) {
-		boolean resultado = productosDAO.insertar(producto);
-		return resultado;
-		/*
-		if (resultado == true) {
-			System.out.println("Producto guardado: " + producto.getDescripcion());
-		} else {
-			System.out.println("Producto NO guardado: " + producto.getDescripcion());
-		}
-		*/
+		return dao.insertar(producto);
 	}
-	
+
 	public boolean modificarProducto(int id, double precio) {
-		boolean resultado = productosDAO.modificar(id, precio);
-		return resultado;
-		/*
-		if (resultado == true) {
-			Producto producto = productosDAO.buscar(id);
-			System.out.println("Producto modificado: " + producto.getDescripcion());
-		} else {
-			System.out.println("Producto NO modificado: " + id);
-		}
-		*/
+		return dao.modificar(id, precio);
 	}
-	
+
 	public boolean eliminarProducto(int id) {
-		System.out.println("Eliminar producto: " + id);
-		return productosDAO.eliminar(id);
+		return dao.eliminar(id);
 	}
 
 }

@@ -6,11 +6,18 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="package es.cfc;"/>
+		<item key="selection" value="System"/>
 		<list key="findhistory">
+			<item value="system"/>
+			<item value="TipoContacto.PROFESIONAL, "/>
+			<item value="TipoContacto.AMIGO, "/>
+			<item value="TipoContacto.CONTACTO, "/>
+			<item value="objAgenda"/>
 			<item value="package es.cfc;"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
+			<item value="gestionContactos"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

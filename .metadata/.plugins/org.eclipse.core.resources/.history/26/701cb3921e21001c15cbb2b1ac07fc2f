@@ -1,6 +1,0 @@
-package es.cfc.models;
-
-public abstract class Planta {
-
-	public abstract void regar(int cantidad, int tiempo);
-}

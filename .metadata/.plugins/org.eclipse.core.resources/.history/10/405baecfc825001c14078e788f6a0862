@@ -1,5 +1,0 @@
-package es.cfc.persistencia;
-
-public class ProductosDAOImpl {
-
-}

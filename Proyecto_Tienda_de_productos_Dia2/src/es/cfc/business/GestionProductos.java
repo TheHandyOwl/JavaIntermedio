@@ -8,29 +8,27 @@ import es.cfc.persistencia.ProductosDAOImpl;
 
 public class GestionProductos {
 
-	private ProductosDAO productosDAO = new ProductosDAOImpl();
-
-	public GestionProductos() {
-	}
+	// DAO (Data Access Object)
+	private ProductosDAO dao = new ProductosDAOImpl();
 
 	public List<Producto> verTodos() {
-		return productosDAO.verTodos();
+		return dao.verTodos();
 	}
 
 	public Producto buscarProducto(int id) {
-		return productosDAO.buscar(id);
+		return dao.buscar(id);
 	}
 
 	public boolean insertarProducto(Producto producto) {
-		return productosDAO.insertar(producto);
+		return dao.insertar(producto);
 	}
 
 	public boolean modificarProducto(int id, double precio) {
-		return productosDAO.modificar(id, precio);
+		return dao.modificar(id, precio);
 	}
 
 	public boolean eliminarProducto(int id) {
-		return productosDAO.eliminar(id);
+		return dao.eliminar(id);
 	}
 
 }

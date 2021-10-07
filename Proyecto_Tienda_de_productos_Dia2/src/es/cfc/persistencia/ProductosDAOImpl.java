@@ -133,7 +133,6 @@ public class ProductosDAOImpl implements ProductosDAO {
 		} catch (SQLException e) {
 			System.out.println("Error al modificar el producto");
 			e.printStackTrace();
-			return false;
 		} finally {
 			cerrarConexion();
 		}
@@ -160,7 +159,6 @@ public class ProductosDAOImpl implements ProductosDAO {
 		} catch (SQLException e) {
 			System.out.println("Error al eliminar el producto");
 			e.printStackTrace();
-			return false;
 		} finally {
 			cerrarConexion();
 		}

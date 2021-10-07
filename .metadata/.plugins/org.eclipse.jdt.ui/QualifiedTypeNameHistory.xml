@@ -25,10 +25,7 @@
     <fullyQualifiedTypeName name="es.cfc.business.GestionTareas"/>
     <fullyQualifiedTypeName name="es.cfc.models.Tarea"/>
     <fullyQualifiedTypeName name="es.cfc.models.Estado"/>
-    <fullyQualifiedTypeName name="es.cfc.models.Sexo"/>
     <fullyQualifiedTypeName name="es.cfc.models.Amigo"/>
-    <fullyQualifiedTypeName name="es.cfc.models.Contacto"/>
-    <fullyQualifiedTypeName name="es.cfc.models.Profesional"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="es.cfc.models.Persona"/>
     <fullyQualifiedTypeName name="es.cfc.utils.DividirException"/>
@@ -43,9 +40,21 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="es.cfc.models.Producto"/>
     <fullyQualifiedTypeName name="es.cfc.persistencia.ProductosDAOImpl"/>
-    <fullyQualifiedTypeName name="es.cfc.persistencia.ProductosDAO"/>
     <fullyQualifiedTypeName name="es.cfc.business.GestionProductos"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="es.cfc.persistencia.ProductosDAO"/>
+    <fullyQualifiedTypeName name="es.cfc.models.Profesional"/>
+    <fullyQualifiedTypeName name="es.cfc.persistencia.ContactosDAO"/>
+    <fullyQualifiedTypeName name="es.cfc.persistencia.ContactosDAOImpl"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="es.cfc.models.Sexo"/>
+    <fullyQualifiedTypeName name="es.cfc.models.Contacto"/>
+    <fullyQualifiedTypeName name="java.lang.Long"/>
+    <fullyQualifiedTypeName name="es.cfc.models.TipoContacto"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 </qualifiedTypeNameHistroy>
