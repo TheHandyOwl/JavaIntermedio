@@ -1,7 +1,17 @@
 package es.cfc.models;
 
-public class Producto {
+import java.io.Serializable;
 
+public class Producto implements Serializable {
+
+	
+	/**
+	 * Al serializar Carrito, debemos tener en cuenta que contiene Producto
+	 * Y Producto también tiene que ser Serializable
+	 */
+	private static final long serialVersionUID = 888662350337662604L;
+	
+	// Resto de propiedades
 	private int id;
 	private String descripcion;
 	private double precio;

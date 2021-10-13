@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <style>
-	.bd-navbar { padding: .75rem 0; background-color: #7952b3; }
+	.bd-navbar { padding: .75rem 0; background-color: #5C7AEA; }
 	.bd-navbar .navbar-nav .nav-link.active { font-weight: 600; color: #fff; }
 </style>
 <title>Carlo's shop</title>
@@ -29,13 +29,19 @@
 					<li class="nav-item col-6 col-md-auto">
 						<i class="bi bi-shop" style="font-size: 32px; color: white;"></i></li>
 					<li class="nav-item col-6 col-md-auto">
-						<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+						<a class="nav-link" aria-current="page" href="index.html">Home</a>
 					</li>
 					<li class="nav-item col-6 col-md-auto">
 						<a class="nav-link" href="miServlet?op=1">Productos</a>
 					</li>
 					<li class="nav-item col-6 col-md-auto">
 						<a class="nav-link" href="formBuscar.html">Buscar producto</a>
+					</li>
+					<li class="nav-item col-6 col-md-auto">
+						<a class="nav-link" href="formAlta.html">Alta nuevo producto</a>
+					</li>
+					<li class="nav-item col-6 col-md-auto">
+						<a class="nav-link" href="formModificar.html">Modificar producto</a>
 					</li>
 				</ul>
 			</div>

@@ -9,7 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import es.cfc.business.Carrito;
 import es.cfc.business.GestionProductos;
 import es.cfc.models.Producto;
 
@@ -39,7 +41,9 @@ public class ServletProductos extends HttpServlet {
 		String opcion = request.getParameter("op");
 		
 		GestionProductos gestion = new GestionProductos();
-		RequestDispatcher rd;
+		// Refactor: sacando cosas del switch. index.html hará de 'default'
+		//RequestDispatcher rd;
+		String pagina = "/index.html";
 		
 		// 0-bis
 		switch (opcion) {
@@ -48,13 +52,14 @@ public class ServletProductos extends HttpServlet {
 			List<Producto> lista = gestion.verTodos();
 			
 			// 1. Elegir la página web
-			rd = request.getRequestDispatcher("/mostrarTodos.jsp");
+			//rd = request.getRequestDispatcher("/mostrarTodos.jsp");
+			pagina = "/mostrarTodos.jsp";
 			
 			// 2. Adjuntar la lista a la petición
 			request.setAttribute("todos", lista);
 			
 			// 3. Redirigir
-			rd.forward(request, response);
+			//rd.forward(request, response);
 			break;
 
 		case "2":
@@ -63,18 +68,110 @@ public class ServletProductos extends HttpServlet {
 			Producto producto = gestion.buscarProducto(codigo);
 			
 			// 1. Elegir la página web
-			rd = request.getRequestDispatcher("/mostrarProducto.jsp");
+			//rd = request.getRequestDispatcher("/mostrarProducto.jsp");
+			pagina = "/mostrarProducto.jsp";
 			
 			// 2. Adjuntar la lista a la petición
 			request.setAttribute("producto", producto);
 			
 			// 3. Redirigir
-			rd.forward(request, response);
+			//rd.forward(request, response);
 			break;
 
-		default:
+		case "3":
+			// Alta nuevo producto
+			codigo = Integer.parseInt(request.getParameter("id"));
+			String descripcion = request.getParameter("descripcion");
+			double precio = Double.parseDouble(request.getParameter("precio"));
+			
+			Producto nuevo = new Producto(codigo, descripcion, precio);
+			if (gestion.insertarProducto(nuevo)) {
+				request.setAttribute("mensaje", "Producto insertado correctamente");
+			} else {
+				request.setAttribute("mensaje", "Producto no ha sido insertado");
+			}
+			
+			pagina = "/mostrarMensaje.jsp";
 			break;
+
+		case "4":
+			// Eliminar producto
+			codigo = Integer.parseInt(request.getParameter("id"));
+			
+			if (gestion.eliminarProducto(codigo)) {
+				request.setAttribute("mensaje",	"Producto eliminado correctamente");
+			} else {
+				request.setAttribute("mensaje",	"Producto no ha sido eliminado");
+			}
+			
+			pagina = "/mostrarMensaje.jsp";
+			break;
+
+		case "5":
+			// Modificar producto
+			codigo = Integer.parseInt(request.getParameter("id"));
+			precio = Double.parseDouble(request.getParameter("precio"));
+			
+			if (gestion.modificarProducto(codigo, precio)) {
+				request.setAttribute("mensaje", "Producto modificado correctamente");
+			} else {
+				request.setAttribute("mensaje", "Producto no ha sido modificado");
+			}
+			
+			pagina = "/mostrarMensaje.jsp";
+			break;
+
+		case "6":
+			// Agregar producto a carrito
+			codigo = Integer.parseInt(request.getParameter("id"));
+			
+			// Abrir o recuperar una sesión del usuario 
+			HttpSession miSession = request.getSession();
+			
+			// Recuperar el objeto Carrito de su sesión
+			Carrito miCarro = (Carrito) miSession.getAttribute("carrito");
+			
+			// Comprobar si no existe el carrito y lo creamos
+			// Esto sólo se ejecutará la primera vez cuando se crea la sesión
+			if (miCarro == null) {
+				miSession.setAttribute("carrito", new Carrito());
+			}
+			
+			// Buscar el producto y añadirlo al carrito
+			miCarro.addProducto(gestion.buscarProducto(codigo));
+			
+			// Redirigir a la página 'mostrarCarrito'.
+			pagina = "/mostrarCarrito.jsp";
+			break;
+			
+		case "7":
+			// Sacar producto de carrito
+			codigo = Integer.parseInt(request.getParameter("id"));
+			
+			// Abrir o recuperar una sesión del usuario 
+			miSession = request.getSession();
+			
+			// Recuperar el objeto Carrito de su sesión
+			miCarro = (Carrito) miSession.getAttribute("carrito");
+			
+			// Comprobar si no existe el carrito y lo creamos
+			// Esto sólo se ejecutará la primera vez cuando se crea la sesión
+			if (miCarro == null) {
+				miSession.setAttribute("carrito", new Carrito());
+			}
+			
+			// Buscar el producto y añadirlo al carrito
+			miCarro.sacarProducto(codigo);
+			
+			// Redirigir a la página 'mostrarCarrito'.
+			pagina = "/mostrarCarrito.jsp";
+			break;
+		
 		}
+		
+		// Refactor: sacando las cosas comunes del switch
+		RequestDispatcher rd = request.getRequestDispatcher(pagina);
+		rd.forward(request, response);
 		
 	}
 
