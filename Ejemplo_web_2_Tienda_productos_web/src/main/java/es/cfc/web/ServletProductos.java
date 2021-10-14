@@ -72,7 +72,7 @@ public class ServletProductos extends HttpServlet {
 			pagina = "/mostrarProducto.jsp";
 			
 			// 2. Adjuntar la lista a la petición
-			request.setAttribute("producto", producto);
+			request.setAttribute("encontrado", producto);
 			
 			// 3. Redirigir
 			//rd.forward(request, response);
@@ -134,11 +134,18 @@ public class ServletProductos extends HttpServlet {
 			// Comprobar si no existe el carrito y lo creamos
 			// Esto sólo se ejecutará la primera vez cuando se crea la sesión
 			if (miCarro == null) {
-				miSession.setAttribute("carrito", new Carrito());
+				miCarro = new Carrito();
+				miSession.setAttribute("carrito", miCarro);
 			}
 			
 			// Buscar el producto y añadirlo al carrito
 			miCarro.addProducto(gestion.buscarProducto(codigo));
+			System.out.println("codigo" + codigo);
+			System.out.println("gestion.buscarProducto(codigo)" + gestion.buscarProducto(codigo));
+			System.out.println("miCarro en servlet: " + miCarro);
+			for (Producto prod : miCarro.getContenido()) {
+				System.out.println("prod1: " + prod);
+			}
 			
 			// Redirigir a la página 'mostrarCarrito'.
 			pagina = "/mostrarCarrito.jsp";
@@ -148,17 +155,12 @@ public class ServletProductos extends HttpServlet {
 			// Sacar producto de carrito
 			codigo = Integer.parseInt(request.getParameter("id"));
 			
-			// Abrir o recuperar una sesión del usuario 
-			miSession = request.getSession();
+			// Tan sólo recuperar una sesión del usuario, pero sin crearla 
+			miSession = request.getSession(false); // el false es para que no la cree
+			//por defecto es true o vacío, y sí crearía la sesión.
 			
 			// Recuperar el objeto Carrito de su sesión
 			miCarro = (Carrito) miSession.getAttribute("carrito");
-			
-			// Comprobar si no existe el carrito y lo creamos
-			// Esto sólo se ejecutará la primera vez cuando se crea la sesión
-			if (miCarro == null) {
-				miSession.setAttribute("carrito", new Carrito());
-			}
 			
 			// Buscar el producto y añadirlo al carrito
 			miCarro.sacarProducto(codigo);

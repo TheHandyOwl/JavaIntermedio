@@ -9,18 +9,25 @@ import es.cfc.models.Producto;
 public class Carrito implements Serializable {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8833943761641144944L;
+	
+	/**
 	 * Generamos ésto al implementar que es Serializable
 	 * (Add generated serial version ID), o el default
 	 */
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 	
 	// Resto de propiedades
 	private List<Producto> contenido = new ArrayList<Producto>();
-	private double importe = 0.00;
+	private double importe;
 	
 	public void addProducto(Producto producto) {
 		contenido.add(producto);
-		importe += producto.getPrecio();
+		//importe = importe + producto.getPrecio();
+		//importe += producto.getPrecio();
+		importe += Math.round(producto.getPrecio() * 100.0) / 100.0; // ¿Redondeamos?
 	}
 	
 	public void sacarProducto(int id) {
@@ -29,11 +36,16 @@ public class Carrito implements Serializable {
 		for (Producto producto : contenido) {
 			if (producto.getId() == id) {
 				encontrado = producto;
-				importe -= producto.getPrecio();
+				//importe -= producto.getPrecio();
+				importe -= Math.round(producto.getPrecio() * 100.0) / 100.0; // ¿Redondeamos?
+				break;
 			}
 		}
 		
 		contenido.remove(encontrado);
+		if (importe < 0) {
+			importe = 0.00;
+		}
 	}
 	
 	public List<Producto> getContenido() {

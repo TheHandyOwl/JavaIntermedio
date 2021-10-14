@@ -3,6 +3,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,11 +57,15 @@
 	<%
 		// Abrir o recuperar una sesión del usuario: Ya viene implicito
 		//HttpSession miSession = request.getSession();
+		//Carrito miCarro = (Carrito) miSession.getAttribute("carrito");
 		Carrito miCarro = (Carrito) session.getAttribute("carrito");
+		System.out.println("miCarro en el carrito: " + miCarro);
+		for (Producto prod : miCarro.getContenido()) {
+			System.out.println("prod2: " + prod);
+		}
 	%>
-	<h3>Importe: <%= miCarro.getImporte() %></h3>
-
-
+	
+	<h3>Importe: <%= miCarro.getImporte() %> €</h3>
 	<table class="table table-success table-striped">
 		<thead>
 			<tr>
@@ -72,7 +77,8 @@
 		</thead>
 		<tbody>
 			<%
-				for (Producto producto : miCarro.getContenido()) {
+				List<Producto> lista = miCarro.getContenido();
+				for (Producto producto : lista) {
 			%>
 			<tr>
 				<th scope="row"><%= producto.getId() %></th>
@@ -87,6 +93,32 @@
 			<%
 				}
 			%>
+		</tbody>
+	</table>
+	
+	<h3>Importe: ${sessionScope.carrito.importe} €</h3>
+	<table class="table table-success table-striped">
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Descripción</th>
+				<th scope="col">Precio</th>
+				<th scope="col">Comprar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${sessionScope.carrito.contenido}" var="prod">
+			<tr>
+				<th scope="row">${prod.id}</th>
+				<td>${prod.descripcion}</td>
+				<td>${prod.precio}</td>
+				<td>
+					<a href="miServlet?op=7&id=${prod.id}">
+						<img alt="Sacar del carrito" src="img/delCarrito64.png" width="32px" />
+					</a>
+				</td>
+			</tr>
+			</c:forEach>
 		</tbody>
 	</table>
 

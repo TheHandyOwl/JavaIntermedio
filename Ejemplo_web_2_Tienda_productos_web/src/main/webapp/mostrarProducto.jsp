@@ -50,8 +50,17 @@
 
 	<h2>Detalles del producto</h2>
 
-	<% Producto producto = (Producto) request.getAttribute("producto"); %>
+	<% Producto producto = (Producto) request.getAttribute("encontrado"); %>
 
+	<p><%= request.getAttribute("encontrado") %></p>
+	
+	<p><jsp:useBean id="encontrado" class="es.cfc.models.Producto" scope="request"></jsp:useBean><p>
+	<ul>
+		<li>ID: <jsp:getProperty property="id" name="encontrado" /></li>
+		<li>Descripción: <jsp:getProperty property="descripcion" name="encontrado" /></li>
+		<li>Precio: <jsp:getProperty property="precio" name="encontrado" /></li>
+	</ul>
+	
 	<p><% out.println(producto); %></p>
 
 	<script

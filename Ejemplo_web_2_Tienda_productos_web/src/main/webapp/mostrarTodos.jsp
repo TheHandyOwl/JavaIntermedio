@@ -72,7 +72,7 @@
 		</thead>
 		<tbody>
 			<%
-				List<Producto> lista = (List<Producto>) request.getAttribute("todos");
+				List<Producto> lista = (List<Producto>)request.getAttribute("todos");
 				for (Producto producto : lista) {
 			%>
 			<tr>
