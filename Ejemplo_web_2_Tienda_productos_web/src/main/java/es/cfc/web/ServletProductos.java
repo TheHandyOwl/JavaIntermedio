@@ -18,7 +18,9 @@ import es.cfc.models.Producto;
 /**
  * Servlet implementation class ServletProductos
  */
-@WebServlet("/miServlet")
+//@WebServlet("/miServlet") // Comentamos esta línea si es un proyecto antiguo
+// El motivo es que estará dado de alta en WEB-INF/lib/web.xml
+// Puede estar allí o aquí, pero no en los 2 sitios.
 public class ServletProductos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
