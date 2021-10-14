@@ -4,6 +4,13 @@
   
   
   <!-- DECLARACION DEL SERVLET -->
+  <context-param>
+    <param-name>sinIVA</param-name>
+    <param-value>Mañana día sin IVA</param-value>
+  </context-param>
+  
+  
+  <!-- DECLARACION DEL SERVLET -->
   <servlet>
     <servlet-name>pepito</servlet-name>
     <servlet-class>es.cfc.web.ServletProductos</servlet-class>
