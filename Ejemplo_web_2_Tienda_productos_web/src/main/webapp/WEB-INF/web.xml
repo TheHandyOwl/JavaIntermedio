@@ -5,8 +5,12 @@
   
   <!-- DECLARACION DEL SERVLET -->
   <servlet>
-  	<servlet-name>pepito</servlet-name>
-  	<servlet-class>es.cfc.web.ServletProductos</servlet-class>
+    <servlet-name>pepito</servlet-name>
+    <servlet-class>es.cfc.web.ServletProductos</servlet-class>
+    <init-param>
+      <param-name>Oferta</param-name>
+      <param-value>Hoy 10% de descuento en todos los productos</param-value>
+    </init-param>
   </servlet>
   
   

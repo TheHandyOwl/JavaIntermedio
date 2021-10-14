@@ -51,6 +51,9 @@
 		</nav>
 	</header>
 
+	<!-- Añadimos la oferta del día -->
+	<marquee behavior="alternate" style="border:solid">${applicationScope.msgOferta}</marquee>
+	
 	<h2>Listado de productos</h2>
 
 	<%-- comentario 1 línea en java --%>

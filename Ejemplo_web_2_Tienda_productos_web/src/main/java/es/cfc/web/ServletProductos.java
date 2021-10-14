@@ -4,8 +4,9 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,6 +32,27 @@ public class ServletProductos extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    /**
+     * Sobreescribimos el método init del GenericServlet!!!
+     * para acceder a las propiedades que hemos inicializado
+     * en el servlet a 'capón'
+     */
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		
+		// Recuperamos el parámetro inicial del servlet 'Oferta'
+		String mensajeDeLaOferta = config.getInitParameter("Oferta");
+		// No tenemos 'request' ni 'session' todavía, por lo que no podemos guardarla ahí
+		
+		// 1. Recuperar el contexto de la aplicación 
+		ServletContext ctxApp = config.getServletContext();
+		
+		// 2. Guardamos el atributo de la oferta
+		ctxApp.setAttribute("msgOferta", mensajeDeLaOferta);
+		
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
